@@ -2,12 +2,9 @@
 
 streamlit==1.36.0
 ultralytics==8.2.50
-
-# Py3.13向け（相性の良い組）
-torch==2.8.0+cpu
-torchvision==0.23.0+cpu
-
-numpy>=2.0,<3.0
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+numpy==1.26.4
 opencv-python-headless==4.10.0.84
 pillow==10.4.0
 requests==2.32.3
