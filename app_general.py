@@ -25,7 +25,7 @@ def visualize(pil, boxes, scores, conf):
         draw.text((x1+3,y1+3), f"{s:.2f}", fill=(255,255,255,255), font=font)
     return Image.alpha_composite(img, ov).convert("RGB"), kept
 
-st.title("💊Pill-counter（General）")
+st.title("💊Pill-counter")
 st.caption("画像アップロード or 静止画カメラで検出します")
 
 with st.sidebar:
