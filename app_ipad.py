@@ -6,7 +6,7 @@ from ultralytics import YOLO
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration, VideoTransformerBase
 from utils_weights import ensure_weights
 
-st.set_page_config(page_title="Pill-counter (iPad)", layout="wide")
+st.set_page_config(page_title="Pill-counter (for iPad)", layout="wide")
 st.markdown("""
 <style>
 video { width:100% !important; height:auto !important; object-fit:cover !important; border-radius:10px; }
