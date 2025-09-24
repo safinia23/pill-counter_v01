@@ -89,3 +89,4 @@ with col2:
 
 st.markdown("""---<div style="text-align:center;color:gray;font-size:.9em;">
 © 2025 andChange All rights reserved.</div>""", unsafe_allow_html=True)
+
