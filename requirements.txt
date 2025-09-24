@@ -2,14 +2,8 @@
 
 streamlit==1.36.0
 ultralytics==8.2.50
-
-# PyTorch CPU (3.12対応)
 torch==2.5.1+cpu
-torchvision==0.20.1+cpu
-
-# NumPyはUltralyticsの要件に合わせて1.xで固定
 numpy==1.26.4
-
 opencv-python-headless==4.10.0.84
 pillow==10.4.0
 requests==2.32.3
