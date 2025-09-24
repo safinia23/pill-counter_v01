@@ -1,10 +1,12 @@
-streamlit>=1.33
-ultralytics>=8.2.0
-Pillow
-numpy
-opencv-python-headless
-streamlit-webrtc
-av
-# CPU版のTorchを明示（Cloudで安定）
-torch==2.3.1+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
+
+streamlit==1.36.0
+ultralytics==8.2.50
+
+torch==2.3.1
+torchvision==0.18.1
+
+opencv-python-headless==4.10.0.84
+Pillow==10.4.0
+numpy==1.26.4
+requests==2.32.3
