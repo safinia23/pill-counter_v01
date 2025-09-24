@@ -5,6 +5,18 @@ import streamlit as st
 from ultralytics import YOLO
 from utils_weights import ensure_weights
 
+def show_image(img, caption=None):
+    """
+    Streamlit のバージョン差異に対応して画像を全幅表示するヘルパー。
+    新: use_container_width / 旧: use_column_width
+    """
+    try:
+        st.image(img, caption=caption, use_container_width=True)
+    except TypeError:
+        # 古い Streamlit でも動く
+        st.image(img, caption=caption, use_column_width=True)
+
+
 st.set_page_config(page_title="Pill-counter (General)", layout="wide")
 
 @st.cache_resource(show_spinner=False)
@@ -62,7 +74,7 @@ with st.spinner("推論中..."):
 
 with col2:
     st.subheader("検出結果")
-    st.image(vis, use_container_width=True)
+    show_image(vis)
     st.metric("検出個数", f"{count} 個")
     buf = io.BytesIO(); vis.save(buf, format="PNG")
     st.download_button("結果画像をダウンロード", data=buf.getvalue(),
@@ -70,7 +82,7 @@ with col2:
 
 with col2:
     st.subheader("入力画像")
-    st.image(pil, use_container_width=True)
+    show_image(pil)
     buf2 = io.BytesIO(); pil.save(buf2, format="PNG")
     st.download_button("入力画像をダウンロード", data=buf2.getvalue(),
                        file_name="input_image.png", mime="image/png")
